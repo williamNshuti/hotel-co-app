@@ -25,4 +25,4 @@ Throughout the rebuilding process , I used the followig approach to build the ho
 Overall, the architecture of the application follows best practices for software engineering, including the use of modular components and separation of concerns. The application is built with scalability and maintainability in mind,making it easy to add new features or update existing ones.
 
 [The link to the application is https://hotel-co.vercel.app/]
-[gitHub link ]
+[gitHub link https://github.com/williamNshuti ]
