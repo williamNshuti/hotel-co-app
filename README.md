@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+    ---------------------     Hotels&Co ----------------------
 
-## Getting Started
+Hotels&Co is a web application built using Next.js, React Query, and Material UI. It allows users to browse and view information about hotels, including their name, images, price, rating, number of reviews, address, and description. The application retrieves data from a hotels API, which is implemented as a mock API using a JSON file. This file contains all the necessary information for each hotel, including an array of images, a name, a price, a rating, a number of reviews, an address, and a description.
 
-First, run the development server:
+Throughout the rebuilding process , I used the followig approach to build the homepage and the details page.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+.First, I gathered requirements from the Document shared to understand the functional and non-functional requirements for the application(HomePage). This included understanding the target audience, their needs and preferences, and the overall goals of the page.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+.Next, I studied and understood the approach used to design the home page of AirBnb as it considered as reference from the Document. This helped me to visualize the layout and design of the page, and understand how the various elements would fit together.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+.I then used the modern stack for the rebuild, including Next JS, React-query, Material-ui . These tools were chosen because of the requirement document and based on their suitability for building a fast and scalable front-end application, and their ease of use for the team.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+.I then , Mocked a JSON REST API response using mockapi.io to provide data for the paginated list of Hotels.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+.I Implemented infinite scroll pagination to allow the user to view more Hotel as they scroll down the page.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+.Allowed the user to view details for a single hotel by selecting it from the list
 
-## Learn More
+.I implemented routing to display the selected item on a separate page.
 
-To learn more about Next.js, take a look at the following resources:
+.I then Tested the implementation using React Testing Library to ensure requirements and acceptance criteria are met.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+. I then , pushed the source code to gitHub and Deploy the application to Vercel.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Overall, the architecture of the application follows best practices for software engineering, including the use of modular components and separation of concerns. The application is built with scalability and maintainability in mind,making it easy to add new features or update existing ones.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[The link to the application is https://hotel-co.vercel.app/]
+[gitHub link ]

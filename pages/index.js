@@ -3,7 +3,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import OptionsTab from "../components/OptionsTab";
 import Container from "@mui/material/Container";
 import LocationCards from "../components/LocationCards";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Footer from "../components/Footer";
 import FooterMenu from "../components/FooterMenu";
 import MobileFooter from "../components/MobileFooter";
@@ -16,6 +16,7 @@ import { getAllHotels } from "./api/api";
 import Head from "next/head";
 
 export default function Home() {
+  const [category, setCategory] = useState("five star");
   // Get all hotel
   const {
     data,
@@ -58,7 +59,7 @@ export default function Home() {
       >
         <Box>
           <Header />
-          <OptionsTab />
+          <OptionsTab setCategory={setCategory} />
         </Box>
         <Box
           sx={{

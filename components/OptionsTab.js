@@ -7,7 +7,7 @@ import Container from "@mui/material/Container";
 // react icons
 import { FaFilter } from "react-icons/fa";
 import { locationsTab } from "../data/mock-data";
-const OptionsTab = () => {
+const OptionsTab = ({ setCategory }) => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -38,7 +38,14 @@ const OptionsTab = () => {
           }}
         >
           {locationsTab.map((tab) => {
-            return <Tab key={tab.id} icon={tab.icon} label={tab.label} />;
+            return (
+              <Tab
+                key={tab.id}
+                icon={tab.icon}
+                label={tab.label}
+                onClick={() => setCategory(tab.id)}
+              />
+            );
           })}
         </Tabs>
         <Button
