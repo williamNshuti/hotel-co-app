@@ -16,7 +16,8 @@ import { getAllHotels } from "./api/api";
 import Head from "next/head";
 
 export default function Home() {
-  const [category, setCategory] = useState("five star");
+  const [category, setCategory] = useState("");
+
   // Get all hotel
   const {
     data,
@@ -26,15 +27,19 @@ export default function Home() {
     hasNextPage,
     fetchNextPage,
     isFetchingNextPage,
-  } = useInfiniteQuery(["hotels_infinite"], getAllHotels, {
-    getNextPageParam: (_lastPage, pages) => {
-      if (pages.length < 6) {
-        return pages.length + 1;
-      } else {
-        return undefined;
-      }
-    },
-  });
+  } = useInfiniteQuery(
+    ["hotels_infinite", category],
+    ({ pageParam }) => getAllHotels({ pageParam, category }),
+    {
+      getNextPageParam: (_lastPage, pages) => {
+        if (pages.length < 10) {
+          return pages.length + 1;
+        } else {
+          return undefined;
+        }
+      },
+    }
+  );
 
   // Referance to the bottom scroll page to trigger fetchNextPage and interaction observer
   const loadMoreRef = useRef();
@@ -55,8 +60,7 @@ export default function Home() {
           display: "flex",
           flexDirection: "column",
           height: "100vh",
-        }}
-      >
+        }}>
         <Box>
           <Header />
           <OptionsTab setCategory={setCategory} />
@@ -68,8 +72,7 @@ export default function Home() {
             flexGrow: 1,
             height: 100,
             overflowY: "scroll",
-          }}
-        >
+          }}>
           <Container maxWidth="xl" sx={{ mb: 3 }}>
             <LocationCards
               data={data}
@@ -79,8 +82,7 @@ export default function Home() {
             />
             <div
               ref={loadMoreRef}
-              className={`${!hasNextPage ? "hidden" : ""}`}
-            >
+              className={`${!hasNextPage ? "hidden" : ""}`}>
               {isFetchingNextPage ? (
                 <Box sx={{ mx: 2 }}>
                   <Grid container rowSpacing={3} columnSpacing={3}>
@@ -102,8 +104,7 @@ export default function Home() {
             <Box
               sx={{
                 display: { xs: "flex", md: "none" },
-              }}
-            >
+              }}>
               <MobileFooter />
             </Box>
           </Container>

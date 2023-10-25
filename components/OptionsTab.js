@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 // react icons
 import { FaFilter } from "react-icons/fa";
-import { locationsTab } from "../data/mock-data";
+import { FiltersTab } from "../data/mock-data";
 const OptionsTab = ({ setCategory }) => {
   const [value, setValue] = React.useState(0);
 
@@ -24,8 +24,7 @@ const OptionsTab = ({ setCategory }) => {
           alignItems: "center",
           mt: 2,
           mb: 2,
-        }}
-      >
+        }}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -35,15 +34,14 @@ const OptionsTab = ({ setCategory }) => {
             [`& .${tabsClasses.scrollButtons}`]: {
               "&.Mui-disabled": { opacity: 0.3 },
             },
-          }}
-        >
-          {locationsTab.map((tab) => {
+          }}>
+          {FiltersTab.map((tab) => {
             return (
               <Tab
                 key={tab.id}
                 icon={tab.icon}
                 label={tab.label}
-                onClick={() => setCategory(tab.id)}
+                onClick={() => setCategory(tab?.key)}
               />
             );
           })}
@@ -58,8 +56,7 @@ const OptionsTab = ({ setCategory }) => {
             textTransform: "capitalize",
             py: 1,
             color: "theme.palette.text.primary",
-          }}
-        >
+          }}>
           <FaFilter /> Filters
         </Button>
       </Box>

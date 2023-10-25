@@ -4,8 +4,10 @@ import axios from "axios";
 
 // GET ALL HOTELS
 
-export const getAllHotels = async ({ pageParam = 1 }) => {
-  const { data } = await axios.get(`/hotels?page=${pageParam}&limit=4`);
+export const getAllHotels = async ({ pageParam = 1, category }) => {
+  const { data } = await axios.get(
+    `/hotels?page=${pageParam}&limit=4&category=${category}`
+  );
   return data;
 };
 

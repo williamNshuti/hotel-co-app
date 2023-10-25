@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 // mui icons
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+
 // 3rd party
 import SwipeableViews from "react-swipeable-views";
 
@@ -26,10 +27,10 @@ import Link from "next/link";
 const CarouselCard = ({ location }) => {
   const [activeStep, setActiveStep] = React.useState(0);
 
-  const maxSteps = location.locationImages.length; // so that we know how many dots
+  const maxSteps = location.locationImages.length; // this is so that we can know how many dots
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1); // jumps when we click the next arrow
+    setActiveStep((prevActiveStep) => prevActiveStep + 1); // This jumps when we click the next arrow
   };
 
   const handleBack = () => {
@@ -37,7 +38,7 @@ const CarouselCard = ({ location }) => {
   };
 
   const handleStepChange = (step) => {
-    setActiveStep(step); // handle swipe change
+    setActiveStep(step); // This handle swipe change
   };
   return (
     <Box
@@ -45,8 +46,7 @@ const CarouselCard = ({ location }) => {
       sx={{
         flexGrow: 1,
         position: "relative",
-      }}
-    >
+      }}>
       <Box sx={fixedIcon}>
         <FaRegHeart size={24} color="#fff" />
       </Box>
@@ -56,8 +56,7 @@ const CarouselCard = ({ location }) => {
           axis={"x"}
           index={activeStep}
           onChangeIndex={handleStepChange}
-          enableMouseEvents
-        >
+          enableMouseEvents>
           {location.locationImages.map((step, index) => {
             return (
               <div key={step.id}>
@@ -65,8 +64,7 @@ const CarouselCard = ({ location }) => {
                   component="img"
                   sx={carouselImage}
                   src={step.url}
-                  alt={step.id}
-                ></Box>
+                  alt={step.id}></Box>
               </div>
             );
           })}
@@ -84,8 +82,7 @@ const CarouselCard = ({ location }) => {
               size="small"
               sx={carouselDot}
               onClick={handleNext}
-              disabled={activeStep === maxSteps - 1}
-            >
+              disabled={activeStep === maxSteps - 1}>
               <KeyboardArrowRight />
             </Button>
           }
@@ -94,8 +91,7 @@ const CarouselCard = ({ location }) => {
               size="small"
               sx={carouselDot}
               onClick={handleBack}
-              disabled={activeStep === 0}
-            >
+              disabled={activeStep === 0}>
               <KeyboardArrowLeft />
             </Button>
           }

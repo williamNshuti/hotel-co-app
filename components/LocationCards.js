@@ -20,29 +20,36 @@ const LocationCards = ({ data, error, isLoading, isError }) => {
       </Grid>
     );
   } else if (isError) {
-    return <Typography component="h3"> Error Loading Hotels Found</Typography>;
-    // line for testing  return <div data-testid="location-cards-is-error">{String(isError)}</div>
+    return <Typography component="h3">Error Loading Hotels Found</Typography>;
+  } else if (data && data?.pages && data?.pages[0].length === 0) {
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "calc(100vh - 400px)",
+          color: (theme) => theme.palette.secondary.main,
+        }}>
+        <Typography component="h1">No results found !</Typography>
+      </Box>
+    );
   }
+
   return (
     <Box sx={{ mx: 2 }}>
       <Grid container rowSpacing={3} columnSpacing={3}>
-        {data &&
-          data.pages.map((res, index) => {
-            return (
-              <React.Fragment
-                key={index}
-                data-testid={`data-items-location-${index}`}
-              >
-                {res?.map((location, index) => {
-                  return (
-                    <Grid key={location.id} item xs={12} sm={4} md={4} lg={3}>
-                      <CarouselCard location={location} />
-                    </Grid>
-                  );
-                })}
-              </React.Fragment>
-            );
-          })}
+        {data.pages.map((res, index) => (
+          <React.Fragment
+            key={index}
+            data-testid={`data-items-location-${index}`}>
+            {res?.map((location, index) => (
+              <Grid key={location.id} item xs={12} sm={4} md={4} lg={3}>
+                <CarouselCard location={location} />
+              </Grid>
+            ))}
+          </React.Fragment>
+        ))}
       </Grid>
     </Box>
   );
