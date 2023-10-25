@@ -19,17 +19,17 @@ I. Understanding and Reference:
 
 Functional Requirements:   
 
-* Homepage with Room Listings:
+1. Homepage with Room Listings:
 
     1. Users should be able to see a paginated list of all rooms listed on the site, categorized by type (e.g., hotels, apartments).
     2. Infinite scroll pagination is a plus, providing a seamless browsing experience.
     3. Users should be able to view details for a single item by selecting it from the list.
 
 
-* Filtering Additional Feature:
+1. Filtering Additional Feature:
     * Implement a category filter feature, allowing users to filter room listings by category (e.g., apartments, hotels, condos).
 
-* Data API:
+3. Data API:
 
     * Use a mock API service (like MockAPI.io) to provide data to the front-end.
     * Ensure that the front-end can consume data from the API effectively.
@@ -37,36 +37,46 @@ Functional Requirements:
 
 Non-Functional Requirements:
 
-* Performance Optimization:
+1. Performance Optimization:
 
     * Ensure the application performs well for users with both low and high-speed internet connections.
     * Optimize the application to load quickly and efficiently.
 
-* Code Quality:
+2. Code Quality:
 
     * Maintain clean and well-structured code that follows industry best practices for simplicity, readability, and maintainability.
 
-* User Experience:
+3. User Experience:
 
     * Provide a user-friendly and familiar experience, taking inspiration from Airbnb's homepage design.
 
-* Deployment Readiness:
+3. Deployment Readiness:
 
     * Ensure that the code is ready for deployment without extra configuration, making it easy for reviewers to access.
     * Deploy the project on Vercel or a similar platform to facilitate easy access and testing(Additional).
+
+
+
+
 
 
 II.  Seamless User Experience
 
 * Leveraging Airbnb's Design Excellence: Recognizing the elegance and user-friendliness of Airbnb's interface, I opted to embrace their design elements. By doing so, I aimed to eliminate the need for an extensive UI/UX design process, ensuring a sleek, intuitive, and instantly familiar experience for users of Hotels&Co.
 
+
+
 III. Component Identification
 
 * Strategic Component Selection: Carefully pinpointing essential components, I honed in on the categorization of services (e.g., hotels, apartments), implemented a sophisticated pagination system, and crafted a polished single-item view. This strategic component choice was informed by the best practices observed on Airbnb's homepage.
 
+
+
 IV. Agile Data Mocking
 
 * Efficient Data Simulation: Swiftly, I established a mock API using MockAPI.io to provide comprehensive data for hotels, condos, apartments, and houses. This included data for names, ratings, prices, and images. The mock API played a pivotal role, serving as a bridge between the user interface and data, eliminating the need for a full-fledged backend system. This approach enabled a focused and streamlined front-end development, as data was readily available for use in the paginated list across all categories.
+
+
 
 V. Performance-Oriented Development
 
@@ -78,8 +88,9 @@ V. Performance-Oriented Development
     * Item Detail Routing: To provide an in-depth user experience, I allowed users to view details for a single item by selecting it from the list. I implemented routing to display the selected item on a separate page, enabling users to explore the chosen listing with ease.
 
 
-VI. Deployment Readiness
 
+
+VI. Deployment Readiness
 
 * Clean and Structured Code: I maintained a meticulously organized codebase, meticulously adhering to the principles of simplicity, readability, and maintainability. This approach guarantees that future iterations and team collaboration are seamlessly executed.
 * Accessible Code Repository: The source code for this project resides in the dedicated GitHub repository, ensuring ease of access for recruiters until the conclusion of January.
