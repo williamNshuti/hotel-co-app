@@ -15,6 +15,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getSingleDetails } from "../api/api";
 
 function SingleRoomDetails() {
+  const [images, setImages] = useState({});
   const router = useRouter();
   const { id } = router.query;
   const { data, isLoading, isError } = useQuery(
