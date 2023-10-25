@@ -1,3 +1,5 @@
+# hotel-co
+
     ---------------------     Hotels&Co ----------------------
 
 Hotels&Co is a web application built using Next.js, React Query, and Material UI. It allows users to browse and view information about hotels, including their name, images, price, rating, number of reviews, address, and description. The application retrieves data from a hotels API, which is implemented as a mock API using a JSON file. This file contains all the necessary information for each hotel, including an array of images, a name, a price, a rating, a number of reviews, an address, and a description.
